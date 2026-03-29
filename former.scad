@@ -23,7 +23,9 @@ helix_r   = helix_d / 2;
 pitch     = pitch_frac  * lambda;     // axial pitch per turn [mm]
 total_h   = pitch * turns;            // total helix height [mm]
 
-former_r  = helix_r - wire_d / 2 - groove_clearance;  // outer radius of cylinder
+// Cylinder radius = helix centreline radius so groove spheres cut INTO the surface.
+// Groove depth = wire_d/2 + groove_clearance (wire sits half-submerged).
+former_r  = helix_r;                                   // outer radius of cylinder
 cyl_h     = total_h + 2 * end_pad;
 
 groove_r  = wire_d / 2 + groove_clearance;             // groove sphere radius
